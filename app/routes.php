@@ -1,12 +1,12 @@
 <?php
 
-    // $router->group(['before'=>'auth'],function($router){
-    //
-    //   $router->controller('mantenimiento', 'App\\Controller\\MantenimientoController');
-    // });
+     $router->group(['before'=>'auth'],function($router){
+
+       $router->controller('mantenimiento', 'App\\Controller\\MantenimientoController');
+     });
 
     // $router->controller('auth', 'App\\Controller\\AuthController');
-    echo "<script>console.log('Debug');</script>";
+
 
     $router->controller('home', 'App\\Controller\\HomeController');
 
@@ -25,9 +25,8 @@
 
     $router->controller('mantenimiento/permisos', 'App\\Controller\\PermisoController');
 
-    echo "<script>console.log('wefwe');</script>";
     $router->controller('auth', 'App\\Controller\\AuthController');
-    echo "<script>console.log('passo');</script>";
+
 
     /*BY: Encinas Ramos José Angel
         Año: 28/Sep/2018,
@@ -38,12 +37,12 @@
     //$router->controller('roles', 'App\\Controller\\RolController');
 
     $router->get('/', function(){
-        \App\Helpers\UrlHelper::redirect('home');
-      // if(Core\Auth::isLoggedIn()){
-      //   \App\Helpers\UrlHelper::redirect('home');
-      // }else{
-      //   \App\Helpers\UrlHelper::redirect('auth');
-      // }
+        //\App\Helpers\UrlHelper::redirect('home');
+       if(Core\Auth::isLoggedIn()){
+         \App\Helpers\UrlHelper::redirect('home');
+       }else{
+         \App\Helpers\UrlHelper::redirect('auth');
+       }
     });
 
     $router->get('/help', function(){
