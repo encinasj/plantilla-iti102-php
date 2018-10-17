@@ -1,0 +1,14 @@
+{
+  "name": "plantilla",
+  "authors": [
+    "Luis A. Rubio <luirting@gmail.com>"
+  ],
+  "description": "Plantilla para maquetacion",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "3.3",
+    "jquery-form": "^4.2.2"
+  }
+}

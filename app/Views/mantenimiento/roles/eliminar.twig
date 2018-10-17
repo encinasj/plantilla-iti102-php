@@ -1,0 +1,23 @@
+{% extends 'partials/layout.twig' %}
+{% block conten %}
+    <div class="page-header">
+        <h4>¿Quieres borrar el siguente registro?</h4>
+    </div>
+    <form action="{{ 'mantenimiento/roles/eliminarr'|url }}" method="post">
+        <input type="hidden" value="{{ rol.id }}" name="id">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group"><label for="">Nombre</label></div>
+                <input value="{{ rol.nombre }}" disabled type="text" name="nombre" placeholder="Ingrese el nombre del rol" class="form-control"></div>
+        </div>
+        <div class="row">
+            <div class="text-right">
+                <a href="{{ 'mantenimiento/roles/'|url }}" class="btn btn-default">Cancelar</a>
+                <button data-ajax="true" class="btn btn-danger" type="submit">
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

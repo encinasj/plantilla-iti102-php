@@ -1,0 +1,35 @@
+{% extends 'partials/layout.twig' %}
+{% block conten %}
+    <div class="page-header">
+        <div class="pull-right">
+            <a href="{{ 'mantenimiento/permisos/agregarp'|url }}" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+        </div>
+        <h4>Catalogo de Permisos</h4>
+        <div class="clearfix"></div>
+    </div>
+
+    <table class="table table-condensed table-bordered table-hover">
+        <thead>
+        <tr class="text-center">
+            <td>Nombre permiso</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+            {% for permiso in permisos %}
+                <tr class="text-center">
+                    <td>{{ permiso.nombre }}</td>
+                    <td>
+                        <a href="{{ 'mantenimiento/permisos/actualizarp/'|url }}{{ permiso.id }}" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                        <a href="{{ 'mantenimiento/permisos/eliminarp/'|url }}{{ permiso.id }}" class="btn btn-danger" type="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td class="text-right" colspan="5">
+                    Total de registros encontrados: {{ permisos|length }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
